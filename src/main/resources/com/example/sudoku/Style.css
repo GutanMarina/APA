@@ -1,0 +1,154 @@
+.base_pane {
+    -fx-background-image: url("fundal.png");
+}
+.button {
+    -fx-background-color: #56a8e3;
+}
+
+.button:hover {
+    -fx-background-color: #56e3d1;
+}
+
+.canvas {
+    -fx-background-color: #4b5d5a;
+
+}
+.text_Game{
+    -fx-font-family: "Papyrus" ;
+    -fx-font-size: 30px ;
+    -fx-font-weight: bold ;
+    -fx-fill: saddlebrown ;
+    -fx-effect: dropshadow(gaussian, black, 3, 0.7, 1, 1) ;
+}
+
+.play_Button {
+    -fx-background-color: transparent; /* Fundal complet transparent */
+    -fx-padding: 0; /* Elimină orice margine suplimentară */
+    -fx-border-color: transparent; /* Fără margini vizibile */
+    -fx-cursor: hand; /* Cursor de mână pentru interacțiune */
+}
+
+/* Efect hover: întunecare */
+.play_Button:hover {
+    -fx-opacity: 0.8; /* Se întunecă puțin la hover */
+}
+
+
+
+.textt {
+    -fx-fill: #313030;
+    -fx-font-size: 24px;
+    -fx-font-family: "Comic Sans MS";
+}
+
+.textFelicitare {
+    -fx-fill: #ad531c;
+    -fx-font-size: 28px;
+    -fx-font-family: "Comic Sans MS";
+}
+
+.text2 {
+    -fx-fill: #313030;
+    -fx-font-size: 30px;
+    -fx-font-family: "Comic Sans MS";
+}
+
+.Tabel {
+    -fx-border-color: black;
+    -fx-padding: 10px;
+}
+
+.textG {
+    -fx-fill: #313030;
+    -fx-font-size: 36px;
+    -fx-font-family: "Times New Roman";
+    -fx-font-weight: bold;
+}
+
+
+
+.door1 {
+    -fx-padding: 0;
+    -fx-border-width: 0;
+    -fx-cursor: hand;
+    -fx-background-color: transparent;
+}
+
+.door2 {
+    -fx-padding: 0;
+    -fx-border-width: 0;
+    -fx-cursor: hand;
+    -fx-background-color: transparent;
+}
+
+.door3 {
+    -fx-padding: 0;
+    -fx-border-width: 0;
+    -fx-cursor: hand;
+    -fx-background-color: transparent;
+}
+
+.back {
+    -fx-padding: 0;
+    -fx-border-width: 0;
+    -fx-cursor: hand;
+    -fx-background-color: transparent;
+}
+
+.textCeas {
+    -fx-font-size: 58px ;
+    -fx-font-family: "Algerian";
+    -fx-font-weight: bold;
+    -fx-text-fill:black;
+}
+
+.text-field {
+    -fx-font-size: 18pt;
+    -fx-font-family: 'Arial';
+}
+
+
+.round-image-button {
+    -fx-padding: 0;
+    -fx-background-radius: 50%; /* Asigură-te că imaginea rămâne rotundă */
+    -fx-border-radius: 50%;
+    -fx-background-color: transparent; /* Fundal transparent *
+    -fx-background-size: cover; /* Asigură că imaginea umple butonul */
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 0, 0.6), 15, 0, 0, 0); /* Efect de lumină galbenă */
+}
+
+.round-image-button:hover {
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 0, 0.8), 20, 0.3, 0, 0); /* Lumină mai intensă la hover */
+}
+
+
+.pergament-image {
+    -fx-background-size: cover; /* Ajustează dimensiunea imaginii să umple containerul */
+    -fx-background-color: transparent; /* Fundal transparent */
+    -fx-background-radius: 10px; /* Ușoară rotunjire a marginilor */
+    -fx-padding: 20px; /* Spațiu în jurul imaginii */
+    -fx-effect: dropshadow(gaussian, rgba(255, 215, 0, 0.7), 20, 0, 0, 0); /* Efect de lumină galbenă (aurie) */
+    -fx-cursor: hand;
+    -fx-border-radius: 10px; /* Rotunjire pentru contur */
+    -fx-border-width: 0;
+    -fx-border-color: transparent;
+    -fx-animation: glow 2s infinite alternate; /* Animația de strălucire */
+}
+
+/* Definirea animației glow pentru strălucire */
+@keyframes glow {
+    0% {
+        -fx-effect: dropshadow(gaussian, rgba(255, 215, 0, 0.4), 10, 0.5, 0, 0);
+    }
+    50% {
+        -fx-effect: dropshadow(gaussian, rgba(255, 215, 0, 0.8), 25, 0.7, 0, 0); /* Strălucire maximă */
+    }
+    100% {
+        -fx-effect: dropshadow(gaussian, rgba(255, 215, 0, 0.4), 10, 0.5, 0, 0); /* Revine la strălucirea inițială */
+    }
+}
+
+.pergament-image:hover {
+    -fx-effect: dropshadow(gaussian, rgba(255, 215, 0, 1.0), 30, 0.7, 0, 0); /* Strălucire intensă la hover */
+}
