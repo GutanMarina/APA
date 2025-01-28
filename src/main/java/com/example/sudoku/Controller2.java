@@ -1,6 +1,8 @@
 package com.example.sudoku;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -37,7 +39,18 @@ public class Controller2 implements Initializable {
     int player_selected_row = -1;
     int player_selected_col = -1;
     Color line_color = Color.WHITE;
+    public void solve() {
+        System.out.println("Solve");
+        gameboard.solvePuzzle(); // Apelăm metoda de soluționare din GameBoard
+        drawOnCanvas(canvas.getGraphicsContext2D()); // Redibăim tabla de joc
+    }
 
+    // Metoda pentru a da un indiciu
+    public void hint() {
+        System.out.println("Hint");
+        gameboard.provideHint(); // Apelăm metoda de hint din GameBoard
+        drawOnCanvas(canvas.getGraphicsContext2D()); // Redibăim tabla de joc
+    }
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         System.out.println("Start");
@@ -310,7 +323,39 @@ public class Controller2 implements Initializable {
             player = new int[N][N];
             resetPlayer();
         }
+        // Metoda pentru a rezolva complet jocul
+        public void solvePuzzle() {
+            // Apelăm funcția fillRemaining pentru a umple toate celulele goale cu soluția corectă
+            fillRemaining(0, 0);
+            resetPlayer(); // Resetăm tabla de joc
+            // Copiem soluția în matricea player
+            for (int row = 0; row < N; row++) {
+                for (int col = 0; col < N; col++) {
+                    player[row][col] = solution[row][col];
+                }
+            }
+        }
 
+        // Metoda pentru a da un hint aleatoriu
+        public void provideHint() {
+            // Căutăm o celulă goală aleatorie
+            List<int[]> emptyCells = new ArrayList<>();
+            for (int row = 0; row < N; row++) {
+                for (int col = 0; col < N; col++) {
+                    if (player[row][col] == 0) {
+                        emptyCells.add(new int[]{row, col});
+                    }
+                }
+            }
+
+            // Dacă există celule goale, completăm aleatoriu una
+            if (!emptyCells.isEmpty()) {
+                int[] randomCell = emptyCells.get((int) (Math.random() * emptyCells.size()));
+                int row = randomCell[0];
+                int col = randomCell[1];
+                player[row][col] = solution[row][col]; // Completează cu soluția corectă
+            }
+        }
 
         public void resetPlayer() {
             for (int row = 0; row < 9; row++) {
